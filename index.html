@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Учет расходов</title>
+    <link rel="shortcut icon" href="ic-exspenses.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-3,400;0,700&family=Manrope:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Учет расходов</h1>
+      <div class="expenses">
+        <div class="expensesInput">
+          <div class="moneyInput rub">
+            <input
+              class="moneyInput__input"
+              type="number"
+              min="1"
+              id="expenseInput"
+            />
+          </div>
+          <select id="categorySelect" class="categorySelect">
+            <option hidden disabled selected value="Категория">
+              Категория
+            </option>
+            <option value="Продукты">Продукты</option>
+            <option value="Кафе и рестораны">Кафе и рестораны</option>
+            <option value="Квартира">Квартира</option>
+            <option value="Авто">Авто</option>
+          </select>
+        </div>
+
+        <button class="addButton" id="addButton">Добавить</button>
+
+        <div class="stats">
+          <div class="stats__limit">
+            <span class="label">Лимит:</span>
+            <span id="limitValue" class="rub">10000</span>
+            <img
+              id="changeLimitBtn"
+              class="stats__changeLimitBtn"
+              src="ic-limit.png"
+              alt="иконка логотипа"
+            />
+          </div>
+
+          <div class="stats__total">
+            <span class="label">Всего:</span>
+            <span id="totalValue" class="rub">0</span>
+          </div>
+
+          <div class="stats__status">
+            <span class="label">Статус:</span>
+            <span class="stats__statusText__positive" id="statusText"
+              >все хорошо</span
+            >
+          </div>
+        </div>
+
+        <div class="expensesHistory">
+          <div class="history__title label">История</div>
+          <ol class="history__list" id="historyList"></ol>
+        </div>
+        <button class="clearButton" id="clearButton">Сбросить расходы</button>
+      </div>
+
+      <div id="popup" class="popup">
+        <div id="popup__content" class="popup__content">
+          <h2 class="popup__title">Новый лимит</h2>
+          <input
+            class="popup__input"
+            type="number"
+            min="1"
+            id="popupExpenseInput"
+            placeholder="введите сумму лимита"
+          />
+          <button id="popup__button" class="popup__button">Задать лимит</button>
+          <button id="popup__close-btn" class="popup__close-btn"></button>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
